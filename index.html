@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular figuras</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        function opciones() {
+            var option = document.getElementById("figuras").value;
+
+            // Utilizar switch para redirigir según la opción
+            switch (option) {
+                case "triangulo":
+                    window.location.href = "./figuras/triangulo.php";
+                    break;
+                case "rectangulo":
+                    window.location.href = "./figuras/rectangulo.php";
+                    break;
+                case "cuadrado":
+                    window.location.href = "./figuras/cuadrado.php";
+                    break;
+                case "circulo":
+                    window.location.href = "./figuras/circulo.php";
+                    break;
+                default:
+                    alert("Selecciona una opción");
+            }
+        }
+    </script>
+    <form onsubmit="opciones(); return false;">
+        <h3>Calcula una figura</h3>
+       <select name="figuras" id="figuras">
+            <option value="" selected>Selecciona una opción</option>
+            <option value="triangulo">Triángulo</option>
+            <option value="rectangulo">Rectángulo</option>
+            <option value="cuadrado">Cuadrado</option>
+            <option value="circulo">Círculo</option>
+        </select>
+        <button type="submit">Enviar</button>
+    </form>
+    
+</body>
+</html>

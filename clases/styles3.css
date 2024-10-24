@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f2f2f2;
+    font-family: 'Arial', sans-serif;
+}
+
+.body1 {
+    background-image: url("../img/triangulo.jpeg");
+    background-size: 100%;
+}
+
+.body2 {
+    background-image: url("../img/cuadrado.jpeg");
+    background-size: 105%;
+}
+
+.body3 {
+    background-image: url("../img/rectangulo.jpg");
+    background-size: 100%;
+}
+
+.body4 {
+    background-image: url("../img/circulo.jpeg");
+    background-size: 100%;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.result-container {
+    border: 2px solid #3498db;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    text-align: center;
+}
+
+h3 {
+    color: #3498db;
+}
+
+p {
+    margin: 10px 0;
+}
