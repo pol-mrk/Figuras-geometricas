@@ -10,12 +10,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>  
-    <form action="../clases/Cuadrado.php" method="POST">
+    <form action="../clases/Cuadrado.php" method="POST" onsubmit="return validacionTotal()">
         <h3>Cuadrado</h3>
         <label for="lado1"><b>Lado 1:</b>
-            <input type="number" name="lado1" id="lado1" value="<?php if (isset($_SESSION['lado1'])) { echo $_SESSION['lado1']; } ?>">
-        </label>
+            <input onblur="validacionLado1()" type="number" name="lado1" id="lado1" value="<?php if (isset($_SESSION['lado1'])) { echo $_SESSION['lado1']; } ?>">
+            <span id="mensajeError" class="error"></span>
+            </label>
         <button type="submit">Calcular área y perímetro</button>
     </form>
+
+    <script>
+        function validacionLado1() {
+            var mensajeError = document.getElementById("mensajeError");
+            var lado1 = document.getElementById("lado1").value;
+            var lado1Estilo = document.getElementById("lado1");
+            var errorMensajes = "";
+
+            // Validar si el nombre de usuario está vacío
+            if (lado1.length == 0) {
+                errorMensajes += "Rellena este campo";
+                lado1Estilo.style.border = "2px solid red";
+            }
+            
+            // Limpiar o mostrar los mensajes de error
+            if (errorMensajes != "") {
+                mensajeError.innerHTML = errorMensajes;
+                mensajeError.style.color = "red";
+                return false;
+            } else {
+                mensajeError.innerHTML = "";
+                lado1Estilo.style.border = "";
+                return true;
+            }
+        }
+
+        function validacionTotal() {
+
+            var validarLado1 = validacionLado1();
+
+            return validarLado1;
+        }
+    </script>
 </body>
 </html>
